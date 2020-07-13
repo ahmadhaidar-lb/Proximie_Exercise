@@ -1,6 +1,6 @@
 #To Build And Run this PROJECT:
 
-1- Download the zip Folder.
+1- Download the zip Folder.\n
 2- Extract it.
 3- Open it from your IDE ( Visual Studio for example).
 4- Open your terminal and run npm i command. 
