@@ -96,7 +96,7 @@ export const Googlebooks:React.FC<GooglebooksProps> = (props: GooglebooksProps) 
   //getting the books and setting the to these books for the 1st time without filtering
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
+    console.log('hon')
     axios
       .get(
         "https://www.googleapis.com/books/v1/volumes?q=" +
@@ -133,11 +133,6 @@ export const Googlebooks:React.FC<GooglebooksProps> = (props: GooglebooksProps) 
           </button>
         </form>
 
-        {result.map(book => (
-          <a target="blank" href={book.volumeInfo.previewLink}>
-            <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} />
-          </a>
-        ))}
       </div>
     );
   }
