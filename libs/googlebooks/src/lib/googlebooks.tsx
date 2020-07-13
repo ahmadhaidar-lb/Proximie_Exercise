@@ -42,28 +42,28 @@ export const Googlebooks:React.FC<GooglebooksProps> = (props: GooglebooksProps) 
  
 
   //setting the book to the input field
-  function handleChange(e) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const book = e.target.value;
 
     setBook(book);
   }
 
   //filtering handlers 
-  function handleFilterChange(e) {
+  function handleFilterChange(e: React.ChangeEvent<HTMLInputElement>) {
 
     if (filter !== e.target.value) {
       setFilter(e.target.value);
       getBooks();
     }
   }
-  function handleOrderChange(e) {
+  function handleOrderChange(e: React.ChangeEvent<HTMLInputElement>) {
 
     if (order !== e.target.value) {
       setOrder(e.target.value);
       getBooks();
     }
   }
-  function handleBookTypeChange(e) {
+  function handleBookTypeChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (bookType !== e.target.value) {
       setBookType(e.target.value);
       getBooks();
@@ -94,7 +94,7 @@ export const Googlebooks:React.FC<GooglebooksProps> = (props: GooglebooksProps) 
   }
 
   //getting the books and setting the to these books for the 1st time without filtering
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     axios
