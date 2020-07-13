@@ -28,6 +28,15 @@
     "exercise-e2e": {
       "tags": [],
       "implicitDependencies": ["exercise"]
+    },
+    "googlebooks": {
+      "tags": []
+    },
+    "home": {
+      "tags": []
+    },
+    "weather": {
+      "tags": []
     }
   }
 }

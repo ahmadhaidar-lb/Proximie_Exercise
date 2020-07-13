@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@exercise/googlebooks": ["libs/googlebooks/src/index.ts"],
+      "@exercise/home": ["libs/home/src/index.ts"],
+      "@exercise/weather": ["libs/weather/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
