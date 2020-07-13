@@ -149,6 +149,7 @@ export const Googlebooks:React.FC<GooglebooksProps> = (props: GooglebooksProps) 
         <form onSubmit={handleSubmit}>
           <div >
             <input
+              key='searchInput'
               type="text"
               onChange={handleChange}
               className="form-control mt-10"

@@ -3,7 +3,7 @@ import Titles from "./components/Titles";
 import Form from "./components/Form";
 import WeatherApi from "./components/WeatherApi";
 import './weather.css';
-
+import axios from "axios";
 
 export interface WeatherProps {}
 
@@ -25,24 +25,28 @@ export const Weather:React.FC<WeatherProps> = (props: WeatherProps) => {
     console.log('here')
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
-    const api_call = await fetch(`http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}%20${country}`);
-    const data = await api_call.json();
-    console.log(data.current.weather_descriptions);
     if (city) {
-        setTemperature(data.current.temperature)
-        setCity( data.location.name)
-        setCountry(data.location.country)
-        setHumidity(data.current.humidity)
-        setDescription(data.current.weather_descriptions[0])
-    } else {
-        setTemperature(undefined)
-        setCity( undefined)
-        setCountry(undefined)
-        setHumidity(undefined)
-        setDescription(undefined)
-        setError("Please enter the values.")
-      
-    }
+    axios
+    .get(`http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}%20${country}`)
+    .then(data => {
+     
+     
+        setTemperature(data.data.current.temperature)
+        setCity( data.data.location.name)
+        setCountry(data.data.location.country)
+        setHumidity(data.data.current.humidity)
+        setDescription(data.data.current.weather_descriptions[0])
+   
+    });
+  } else {
+    setTemperature(undefined)
+    setCity( undefined)
+    setCountry(undefined)
+    setHumidity(undefined)
+    setDescription(undefined)
+    setError("Please enter the values.")
+  
+}
   }
   
   //rendering
